@@ -1,0 +1,14 @@
+resources:
+  jobs:
+    ingesation_job:
+      name: ingesation_job
+      tasks:
+        - task_key: ingesation
+          notebook_task:
+            notebook_path: ../../src/Notebooks/Ingesation.ipynb
+            base_parameters:
+              catalog_name: ${var.catalog_name}
+            source: WORKSPACE
+      queue:
+        enabled: true
+      performance_target: PERFORMANCE_OPTIMIZED
